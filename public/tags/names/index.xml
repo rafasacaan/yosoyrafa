@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Names on yo_soy_rafa</title>
+    <link>//localhost:1313/tags/names/</link>
+    <description>Recent content in Names on yo_soy_rafa</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Athul</copyright>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/names/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Title of the post</title>
+      <link>//localhost:1313/posts/first/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/first/</guid>
+      <description>&lt;p&gt;hey, what a post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
