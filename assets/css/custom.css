@@ -1,21 +1,24 @@
 :root{
-    --maincolor: red;
+    --maincolor: #50fa7b;
     --bordercl:rebeccapurple;
     --callouctcolor:dodgerblue;
     --hovercolor:navy;
     --darkMaincolor: #50fa7b;
-    }
-    
-    p {
-      /* font-family: 'Fira Sans', sans-serif; */
-      line-height: 1.5;
-    }
-    
-    footer {
-      display: flex;
-      align-items: center;
-      border-top: 0.2rem dotted gray;
-      padding: 2rem 0rem;
-      margin-top: 2rem;
-    }
-    
+}
+
+p {
+  /* font-family: 'Fira Sans', sans-serif; */
+  line-height: 1.5;
+}
+
+a {
+    border-bottom: 1px solid var(--maincolor);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  border-top: 0.2rem dotted gray;
+  padding: 2rem 0rem;
+  margin-top: 2rem;
+}
