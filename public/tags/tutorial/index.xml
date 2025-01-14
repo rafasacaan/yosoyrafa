@@ -13,7 +13,7 @@
       <link>//localhost:1313/posts/hey-bob/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/hey-bob/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Tags&lt;/strong&gt;: &lt;code&gt;uv&lt;/code&gt;, &lt;code&gt;bob&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.&lt;/p&gt;</description>
+      <description>&lt;p&gt;A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.&lt;/p&gt;&#xA;&lt;p&gt;En este post te cuento cómo lo hice.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

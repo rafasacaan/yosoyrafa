@@ -27,3 +27,7 @@ footer {
   padding: 2rem 0rem;
   margin-top: 2rem;
 }
+
+footer-info::before {
+  content: "My new text here"
+}

@@ -17,6 +17,7 @@ paginate=3 # articles per page
 	subtitle = "Hola, soy rafa y este es mi blog para tomar notas y compartir las cosas que me generan alguna dosis de fascinación."
 	mathjax = true # enable MathJax support
 	katex = true # enable KaTeX support
+	footer_text = "My custom footer text"
 	customcss = ["css/custom.css"]
 
 # Social Tags

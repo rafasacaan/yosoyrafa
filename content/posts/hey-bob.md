@@ -6,8 +6,6 @@ tldr: Un paquete de python usando `uv` para obtener extractos random de cancione
 tags: ['tutorial', 'python', 'package' ]
 ---
 
-**Tags**: `uv`, `bob`
-
 A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.
 
 En este post te cuento cómo lo hice.
