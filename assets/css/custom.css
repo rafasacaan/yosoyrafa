@@ -1,5 +1,5 @@
 :root{
-    --maincolor: #fa8450;
+    --maincolor: #fa5050;
     --bordercl:rebeccapurple;
     --callouctcolor:dodgerblue;
     --hovercolor:navy;
@@ -12,7 +12,7 @@ p {
 }
 
 a {
-    border-bottom: 1px solid var(--maincolor);
+    border-bottom: 1px dashed var(--maincolor);
 }
 
 div.highlight {
