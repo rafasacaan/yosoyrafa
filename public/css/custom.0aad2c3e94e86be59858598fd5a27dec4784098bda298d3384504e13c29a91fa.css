@@ -15,10 +15,6 @@ a {
     border-bottom: 1px solid var(--maincolor);
 }
 
-div.highlight {
-  font-size: small;
-}
-
 footer {
   display: flex;
   align-items: center;

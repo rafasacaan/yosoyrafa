@@ -1,10 +1,10 @@
 ---
 title: "Primer post"
-description: "Just trying stuff out"
+description: 
 date: 2024-01-01
 tldr: "Nothing important here yet"
 draft: false
-tags: ["ml"]
+tags: []
 ---
 
 # first things first

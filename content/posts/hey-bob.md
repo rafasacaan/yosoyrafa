@@ -1,7 +1,9 @@
 ---
 title: Invocando a Bob - random lyrics en tu terminal
 date: 2025-01-03
-description: Un paquete de python usando `uv` para obtener extractos random de canciones de Bob Dylan.
+description: 
+tldr: Un paquete de python usando `uv` para obtener extractos random de canciones de Bob Dylan.
+tags: ['tutorial', 'python', 'package' ]
 ---
 
 **Tags**: `uv`, `bob`

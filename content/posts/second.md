@@ -1,10 +1,10 @@
 ---
 title: "Hola hola"
-description: "si soy yo"
+description: 
 date: 2024-01-07
 tldr: "Nothing important here yet"
 draft: false
-tags: ["ml"]
+tags: []
 ---
 
 # first things first

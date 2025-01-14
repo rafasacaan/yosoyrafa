@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Invocando a Bob - random lyrics en tu terminal - yo_soy_rafa</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Tags: uv, bob
+A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="//localhost:1313/posts/hey-bob/">
+  <meta property="og:site_name" content="yo_soy_rafa">
+  <meta property="og:title" content="Invocando a Bob - random lyrics en tu terminal">
+  <meta property="og:description" content="Tags: uv, bob
+A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-03T00:00:00+00:00">
+    <meta property="article:tag" content="Tutorial">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Package">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Invocando a Bob - random lyrics en tu terminal">
+  <meta name="twitter:description" content="Tags: uv, bob
+A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.">
+
+        <link href="//localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="//localhost:1313/css/main.e5be0b244cfea0385bf04425148e0847f227ebc587eb7cf8ce8e2532d66a9248.css" /><script type="text/javascript"
+		src="//localhost:1313/js/MathJax.js"></script>
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script><link rel="stylesheet" href="//localhost:1313/katex/katex.min.css ">
+		<script defer src="//localhost:1313/katex/katex.min.js"></script>
+		<script defer src="//localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="//localhost:1313/css/custom.034e8b1bf120f621fc5aa3a654c4596dece9e1bc09da90c04351c89024b9f3c2.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="//localhost:1313/">yo_soy_rafa</a>
+	</div>
+	<nav>
+		
+		<a href="/">home</a>
+		
+		<a href="/posts">all posts</a>
+		
+		<a href="/tags">tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Invocando a Bob - random lyrics en tu terminal</h1>
+          <div class="meta">Posted on Jan 3, 2025</div>
+        </div>
+        
+        <div class="tldr">
+          <strong>tl;dr:</strong>
+          Un paquete de python usando `uv` para obtener extractos random de canciones de Bob Dylan.
+        </div>
+        <section class="body">
+          <p><strong>Tags</strong>: <code>uv</code>, <code>bob</code></p>
+<p>A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.</p>
+<p>En este post te cuento cómo lo hice.</p>
+<h2 id="cómo-lo-hice">Cómo lo hice?</h2>
+<p>Dicen que todo buen proyecto nace como un paquete de python. Para crear mi propio paquete del gran Bob quise usar la librería de python <code>uv</code>. Su promesa es que reemplaza a <code>pip</code>, <code>poetry</code> entre otras, y que administra las librerías mucho más rápido (usa Rust). Más sobre <code>uv</code> y de cómo instalarlo <a href="https://github.com/astral-sh/uv">acá</a>.</p>
+<h3 id="estructura-de-la-librería">Estructura de la librería</h3>
+<p>Necesitamos hacer dos cosas:</p>
+<ul>
+<li>Crear una <strong>estructura de directorios</strong> y archivos</li>
+<li>Crear un <strong>ambiente de python</strong></li>
+</ul>
+<p>Una vez instalado <code>uv</code>, podemos ir al lugar donde queremos crear nuestro paquete y escribir en la terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv init hey-bob --python 3.8 --package
+</span></span></code></pre></div><p>Con esto le estoy diciendo a <code>uv</code> que quiero inicializar un proyecto que se llama <code>hey-bob</code>, que usa al menos la versión 3.8 de python, y que quiero que tenga la estructura de un paquete de python. El <em>tree</em> del proyecto se ve así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>    |-- README.md
+</span></span><span style="display:flex;"><span>    |-- pyproject.toml
+</span></span><span style="display:flex;"><span>    |-- src
+</span></span><span style="display:flex;"><span>        |-- hey-bob
+</span></span><span style="display:flex;"><span>            |-- __init__.py
+</span></span></code></pre></div><p>Buenísima! Ahora veamos qué hay dentro de <code>pyproject.toml</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[project]
+</span></span><span style="display:flex;"><span>name = &#34;hey-bob&#34;
+</span></span><span style="display:flex;"><span>version = &#34;0.1.0&#34;
+</span></span><span style="display:flex;"><span>description = &#34;Add your description here&#34;
+</span></span><span style="display:flex;"><span>readme = &#34;README.md&#34;
+</span></span><span style="display:flex;"><span>authors = [
+</span></span><span style="display:flex;"><span>    { name = &#34;rafasacaan&#34;, email = &#34;rafasacaan@gmail.com&#34; }
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>requires-python = &#34;&gt;=3.8&#34;
+</span></span><span style="display:flex;"><span>dependencies = []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[project.scripts]
+</span></span><span style="display:flex;"><span>hey-bob = &#34;hey_bob:main&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[build-system]
+</span></span><span style="display:flex;"><span>requires = [&#34;hatchling&#34;]
+</span></span><span style="display:flex;"><span>build-backend = &#34;hatchling.build&#34;
+</span></span></code></pre></div><p>Vemos que tenemos info sobre nuestro proyecto, así como un entry point en <code>hey_bob:main</code>.</p>
+<p>Ahora, nos falta crear un ambiente de python adecuado. Para esto en el root de nuestro proyecto escribimos</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>uv venv --python 3.8
+</span></span></code></pre></div><p>con lo que aparecerá una nueva carpeta escondida llamada <code>.venv</code>. Podemos activar nuestro <em>environment</em> de python con</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>source .venv/bin/activate
+</span></span></code></pre></div><p>Para procesar las letras de Bob necesitaremos instalar <code>pandas</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>uv add pandas
+</span></span></code></pre></div><p>Hasta ahora, tenemos los huesos de nuestra librería de python. Ahora, a lo que vinimos: las letras del gran Bob.</p>
+<h3 id="letras-random">Letras random</h3>
+<p>Qué mejor fuente de <em>datasets</em> que kaggle. Encontré ahí un <a href="https://www.kaggle.com/datasets/cloudy17/bob-dylan-songs">dataset</a> con muchísimas letras de las canciones de Bob entre 1961 y el 2020.</p>
+<p>Guardé el <em>.csv</em> dentro de <code>src/hey-bob/data</code> y creé un script de python en <code>src/hey-bob/services.py</code> donde vivirán las funciones principales de la librería.</p>
+<p>Pero antes, necesito un jupyter notebook para jugar con los datos y crear una buena función. Para esto instalamos <em>jupyter</em> en modalidad dev:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv add jupyter --dev
+</span></span></code></pre></div><p>Después de jugar un rato en el jupyter notebook, creé las siguientes funciones:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">pandas</span> <span style="color:#00a8c8">as</span> <span style="color:#111">pd</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">random</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> <span style="color:#111">pathlib</span> <span style="color:#f92672">import</span> <span style="color:#111">Path</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">def</span> <span style="color:#75af00">load_pickle</span><span style="color:#111">():</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">current_dir</span> <span style="color:#f92672">=</span> <span style="color:#111">Path</span><span style="color:#111">(</span><span style="color:#111">__file__</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">parent</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">data_file</span> <span style="color:#f92672">=</span> <span style="color:#111">current_dir</span> <span style="color:#f92672">/</span> <span style="color:#d88200">&#39;data&#39;</span> <span style="color:#f92672">/</span> <span style="color:#d88200">&#39;lyrics.csv&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">if</span> <span style="color:#f92672">not</span> <span style="color:#111">data_file</span><span style="color:#f92672">.</span><span style="color:#111">exists</span><span style="color:#111">():</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00a8c8">raise</span> <span style="color:#75af00">FileNotFoundError</span><span style="color:#111">(</span><span style="color:#d88200">f</span><span style="color:#d88200">&#34;Could not find data file at </span><span style="color:#d88200">{</span><span style="color:#111">data_file</span><span style="color:#d88200">}</span><span style="color:#d88200">&#34;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">return</span> <span style="color:#111">pd</span><span style="color:#f92672">.</span><span style="color:#111">read_pickle</span><span style="color:#111">(</span><span style="color:#111">data_file</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">def</span> <span style="color:#75af00">get_random_lyrics</span><span style="color:#111">(</span><span style="color:#111">df</span><span style="color:#111">,</span> <span style="color:#111">year</span><span style="color:#f92672">=</span><span style="color:#00a8c8">None</span><span style="color:#111">):</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">if</span> <span style="color:#111">year</span> <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#00a8c8">None</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">available_years</span> <span style="color:#f92672">=</span> <span style="color:#111">sorted</span><span style="color:#111">(</span><span style="color:#111">df</span><span style="color:#111">[</span><span style="color:#d88200">&#39;release_year&#39;</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">unique</span><span style="color:#111">())</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#00a8c8">if</span> <span style="color:#111">year</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> <span style="color:#111">available_years</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#111">closest_year</span> <span style="color:#f92672">=</span> <span style="color:#111">min</span><span style="color:#111">(</span><span style="color:#111">available_years</span><span style="color:#111">,</span> <span style="color:#111">key</span><span style="color:#f92672">=</span><span style="color:#00a8c8">lambda</span> <span style="color:#111">x</span><span style="color:#111">:</span> <span style="color:#111">abs</span><span style="color:#111">(</span><span style="color:#111">x</span> <span style="color:#f92672">-</span> <span style="color:#111">year</span><span style="color:#111">))</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#111">filtered_df</span> <span style="color:#f92672">=</span> <span style="color:#111">df</span><span style="color:#111">[</span><span style="color:#111">df</span><span style="color:#111">[</span><span style="color:#d88200">&#39;release_year&#39;</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">closest_year</span><span style="color:#111">]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00a8c8">else</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#111">filtered_df</span> <span style="color:#f92672">=</span> <span style="color:#111">df</span><span style="color:#111">[</span><span style="color:#111">df</span><span style="color:#111">[</span><span style="color:#d88200">&#39;release_year&#39;</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">year</span><span style="color:#111">]</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">else</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">filtered_df</span> <span style="color:#f92672">=</span> <span style="color:#111">df</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">selected_song</span> <span style="color:#f92672">=</span> <span style="color:#111">filtered_df</span><span style="color:#f92672">.</span><span style="color:#111">sample</span><span style="color:#111">(</span><span style="color:#111">n</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">iloc</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Extract song data</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">song_name</span><span style="color:#111">,</span> <span style="color:#111">song_year</span> <span style="color:#f92672">=</span> <span style="color:#111">selected_song</span><span style="color:#f92672">.</span><span style="color:#111">title</span><span style="color:#111">,</span> <span style="color:#111">selected_song</span><span style="color:#f92672">.</span><span style="color:#111">release_year</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Split into lines</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">lines</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">line</span><span style="color:#f92672">.</span><span style="color:#111">strip</span><span style="color:#111">()</span> <span style="color:#00a8c8">for</span> <span style="color:#111">line</span> <span style="color:#f92672">in</span> <span style="color:#111">selected_song</span><span style="color:#111">[</span><span style="color:#d88200">&#39;lyrics&#39;</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">split</span><span style="color:#111">(</span><span style="color:#d88200">&#39;</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#39;</span><span style="color:#111">)</span> <span style="color:#00a8c8">if</span> <span style="color:#111">line</span><span style="color:#f92672">.</span><span style="color:#111">strip</span><span style="color:#111">()]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Select a random starting point</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">start_index</span> <span style="color:#f92672">=</span> <span style="color:#111">random</span><span style="color:#f92672">.</span><span style="color:#111">randint</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">max</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">lines</span><span style="color:#111">)</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span><span style="color:#111">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Get up to 4 consecutive lines</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">selected_lines</span> <span style="color:#f92672">=</span> <span style="color:#111">lines</span><span style="color:#111">[</span><span style="color:#111">start_index</span><span style="color:#111">:</span><span style="color:#111">start_index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span><span style="color:#111">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Join the lines with newlines</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">selected_text</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#39;</span><span style="color:#f92672">.</span><span style="color:#111">join</span><span style="color:#111">(</span><span style="color:#111">selected_lines</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">return</span> <span style="color:#111">song_name</span><span style="color:#111">,</span> <span style="color:#111">song_year</span><span style="color:#111">,</span> <span style="color:#111">selected_text</span>
+</span></span></code></pre></div><p>Tenemos que indicarle a nuestro paquete las funciones que queremos disponibilizar. Esto lo hacemos en <code>__init__.py</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> <span style="color:#111">.services</span> <span style="color:#f92672">import</span> <span style="color:#111">get_random_lyrics</span><span style="color:#111">,</span> <span style="color:#111">load_pickle</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> <span style="color:#111">.__main__</span> <span style="color:#f92672">import</span> <span style="color:#111">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">__all__</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;get_random_lyrics&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;load_pickle&#39;</span><span style="color:#111">]</span>
+</span></span></code></pre></div><p>Y también crear nuestro archivo <code>__main__.py</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">argparse</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> <span style="color:#111">.services</span> <span style="color:#f92672">import</span> <span style="color:#111">get_random_lyrics</span><span style="color:#111">,</span> <span style="color:#111">load_pickle</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">def</span> <span style="color:#75af00">main</span><span style="color:#111">():</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">parser</span> <span style="color:#f92672">=</span> <span style="color:#111">argparse</span><span style="color:#f92672">.</span><span style="color:#111">ArgumentParser</span><span style="color:#111">(</span><span style="color:#111">description</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;Get random song lyrics&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">parser</span><span style="color:#f92672">.</span><span style="color:#111">add_argument</span><span style="color:#111">(</span><span style="color:#d88200">&#39;--year&#39;</span><span style="color:#111">,</span> <span style="color:#111">type</span><span style="color:#f92672">=</span><span style="color:#111">int</span><span style="color:#111">,</span> <span style="color:#111">help</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;Specific year to get lyrics from (optional)&#39;</span><span style="color:#111">,</span> <span style="color:#111">default</span><span style="color:#f92672">=</span><span style="color:#00a8c8">None</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">args</span> <span style="color:#f92672">=</span> <span style="color:#111">parser</span><span style="color:#f92672">.</span><span style="color:#111">parse_args</span><span style="color:#111">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">try</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># Load the data first</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">df</span> <span style="color:#f92672">=</span> <span style="color:#111">load_pickle</span><span style="color:#111">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># Get random verse</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">song_name</span><span style="color:#111">,</span> <span style="color:#111">song_year</span><span style="color:#111">,</span> <span style="color:#111">text</span> <span style="color:#f92672">=</span> <span style="color:#111">get_random_lyrics</span><span style="color:#111">(</span><span style="color:#111">df</span><span style="color:#111">,</span> <span style="color:#111">year</span><span style="color:#f92672">=</span><span style="color:#111">args</span><span style="color:#f92672">.</span><span style="color:#111">year</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># Print with formatting</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34; &#34;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">print</span><span style="color:#111">(</span><span style="color:#111">text</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">print</span><span style="color:#111">(</span><span style="color:#d88200">f</span><span style="color:#d88200">&#34;- &#39;</span><span style="color:#d88200">{</span><span style="color:#111">song_name</span><span style="color:#d88200">}</span><span style="color:#d88200">&#39;, </span><span style="color:#d88200">{</span><span style="color:#111">song_year</span><span style="color:#d88200">}</span><span style="color:#d88200"> - Bob Dylan&#34;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34; &#34;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">except</span> <span style="color:#75af00">FileNotFoundError</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Error: Could not find the lyrics data file.&#34;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">except</span> <span style="color:#75af00">Exception</span> <span style="color:#00a8c8">as</span> <span style="color:#111">e</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#111">print</span><span style="color:#111">(</span><span style="color:#d88200">f</span><span style="color:#d88200">&#34;Error: </span><span style="color:#d88200">{</span><span style="color:#111">str</span><span style="color:#111">(</span><span style="color:#111">e</span><span style="color:#111">)</span><span style="color:#d88200">}</span><span style="color:#d88200">&#34;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">if</span> <span style="color:#111">__name__</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;__main__&#39;</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#111">exit</span><span style="color:#111">(</span><span style="color:#111">main</span><span style="color:#111">())</span>
+</span></span></code></pre></div><p>Ahora podemos instalar localmente nuestro paquete y probarlo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>uv pip install .
+</span></span></code></pre></div><p>Y voilá!  Si le pido una ayuda extra a Bob, me dice:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>My head is on straight
+</span></span><span style="display:flex;"><span>Most of the time
+</span></span><span style="display:flex;"><span>I’m strong enough not to hate
+</span></span><span style="display:flex;"><span>I don’t build up illusion ’til it makes me sick
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- &#39;Most of the Time&#39;, 1989, Bob Dylan
+</span></span></code></pre></div><h3 id="publicando-a-pypl">Publicando a PyPl</h3>
+<p>Para publicar nuestro paquete de python, primero utilizamos <code>uv build --wheel</code> que construye el paquete en formato wheel, optimizado para la distribución.</p>
+<p>Luego, con <code>uv pip install build twine</code> instalamos las herramientas necesarias:</p>
+<ul>
+<li><em>build</em> para crear los artefactos de distribución y</li>
+<li><em>twine</em> para la carga segura a PyPI.</li>
+</ul>
+<p>El comando <code>python -m build</code> genera tanto el archivo wheel como el source distribution (sdist) en el directorio &lsquo;dist/&rsquo;.</p>
+<p>Finalmente, <code>python -m twine upload dist/*</code> sube todos los artefactos generados a PyPI, donde estarán disponibles para que cualquiera pueda instalarlos usando pip o uv. Durante este último paso, tendrás que autenticarte con tus credenciales de PyPI.</p>
+<h3 id="nota">Nota:</h3>
+<p><code>uv</code> <em>cachea</em> las operaciones del <em>environment</em>, por lo que puede ser necesario borrar el ambiente y el caché de <code>uv</code> y crearlo de nuevo para visualizar los cambios hechos en el código de fuente. Para esto typear en el terminal <code>rm -rf ~/.cache/uv</code> y <code>rm -rf .venv</code>.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/tutorial">tutorial</a></li>
+              
+              <li><a href="/tags/python">python</a></li>
+              
+              <li><a href="/tags/package">package</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        var disqus_shortname = 'yourDisqusShortname';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/athul/archie" rel="me" title="GitHub"><svg class="feather">
+   <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+</svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2025  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>
