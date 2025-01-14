@@ -15,6 +15,14 @@ a {
     border-bottom: 1px dashed var(--maincolor);
 }
 
+a.readmore {
+    font-size: smaller;
+}
+
+section.list-item time {
+    font-size: smaller;
+}
+
 div.highlight {
   font-size: small;
 }
