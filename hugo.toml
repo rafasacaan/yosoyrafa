@@ -14,7 +14,7 @@ paginate=3 # articles per page
 [params]
 	mode="light" # color-mode → light,dark,toggle or auto
 	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
-	subtitle = "Hola, soy rafa y este es mi lugar para registrar algunas notas y mantener vivo el espíritu maker. ✂️ 🎒 🖍️"
+	subtitle = "Hola, soy rafa y este es mi lugar para registrar notas random y mantener vivo mi espíritu maker. ✂️ 🎒 🖍️"
 	customcss = ["css/custom.css"]
 
 # Social Tags
