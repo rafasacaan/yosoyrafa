@@ -1,23 +1,21 @@
 ---
-title: Invocando a Bob - random lyrics en tu terminal
+title: Invocando a Bob Dylan - crea tu primer python package
 date: 2025-01-03
 description: 
-tldr: Un paquete de python usando `uv` para obtener extractos random de canciones de Bob Dylan.
+tldr: Crea tu propio paquete de python para obtener letras de Bob Dylan cuando más las necesites.
 tags: ['tutorial', 'python', 'package' ]
 ---
 
-A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que cree esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.
+A veces me pasa que cuando llevo mucho tiempo escribiendo código, necesito invocar a la aleatoriedad para inyectarme una dosis de nueva energía. Se me ocurrió que Bob Dylan sería la la fuente indicada a quien recurrir, es por eso que creé esta librería de python que te devuelve texto en tu terminal con algunas frases aleatorias sacadas de sus canciones para los momentos en qué más lo necesites.
 
-En este post te cuento cómo lo hice.
+También, dicen que todo buen proyecto nace como un paquete de python. Creo que es buenísima idea crear paquetes de python para poder compartir y, sobre todo, para tratar cada cosa que construimos como un proyecto cerrado, que tiene que cumplir un objetivo. Nada peor que mucho código dado vueltas como un buen plato de tallarines. 
 
-## Cómo lo hice?
+Para crear mi propio paquete del gran Bob quise usar la librería de python `uv`. Su promesa es que reemplaza a `pip`, `poetry` entre otras, y que administra las librerías mucho más rápido (usa Rust por debajo). Más sobre `uv` y de cómo instalarlo [acá](https://github.com/astral-sh/uv).
 
-Dicen que todo buen proyecto nace como un paquete de python. Para crear mi propio paquete del gran Bob quise usar la librería de python `uv`. Su promesa es que reemplaza a `pip`, `poetry` entre otras, y que administra las librerías mucho más rápido (usa Rust). Más sobre `uv` y de cómo instalarlo [acá](https://github.com/astral-sh/uv).
+### Cómo empiezo?
 
-### Estructura de la librería
-
-Necesitamos hacer dos cosas:
-- Crear una **estructura de directorios** y archivos
+Primero, necesitamos hacer dos cosas:
+- Crear una **estructura de directorios** y archivos para nuestra librería/python package
 - Crear un **ambiente de python**
 
 Una vez instalado `uv`, podemos ir al lugar donde queremos crear nuestro paquete y escribir en la terminal:
@@ -58,7 +56,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-Vemos que tenemos info sobre nuestro proyecto, así como un entry point en `hey_bob:main`.
+Vemos que tenemos info sobre nuestro proyecto, así como un entry point en `hey_bob:main`. Este entry point será el comando que queremos llamar para que nos devuelvan nuestras letras de Dylan.
 
 Ahora, nos falta crear un ambiente de python adecuado. Para esto en el root de nuestro proyecto escribimos
 
@@ -72,25 +70,25 @@ con lo que aparecerá una nueva carpeta escondida llamada `.venv`. Podemos activ
 source .venv/bin/activate
 ```
 
-Para procesar las letras de Bob necesitaremos instalar `pandas`. 
+Para procesar las letras de Bob necesitaremos instalar `pandas`. Por lo tanto, instalemos esta librería usando `uv`.
 ```
 uv add pandas
 ```
 
-Hasta ahora, tenemos los huesos de nuestra librería de python. Ahora, a lo que vinimos: las letras del gran Bob.
+Hasta aquí, tenemos los huesos de nuestra librería de python. Ahora, a lo que vinimos: las letras del gran Bob.
 
-### Letras random
+### Quiero mis random *lyrics*
 Qué mejor fuente de *datasets* que kaggle. Encontré ahí un [dataset](https://www.kaggle.com/datasets/cloudy17/bob-dylan-songs) con muchísimas letras de las canciones de Bob entre 1961 y el 2020. 
 
 Guardé el *.csv* dentro de `src/hey-bob/data` y creé un script de python en `src/hey-bob/services.py` donde vivirán las funciones principales de la librería.
 
-Pero antes, necesito un jupyter notebook para jugar con los datos y crear una buena función. Para esto instalamos *jupyter* en modalidad dev:
+Pero antes, necesito un jupyter notebook para jugar con los datos y crear una buena función. Para esto instalemos la librería de *jupyter* en modalidad dev del ambiente de python:
 
 ```bash
 uv add jupyter --dev
 ```
 
-Después de jugar un rato en el jupyter notebook, creé las siguientes funciones:
+Después de jugar un rato en el jupyter notebook, creé las siguientes funciones que procesan las canciones, escoge una random, y toma algunas frases de éstas. Nada del otro mundo.
 
 ```python
 import pandas as pd
@@ -140,7 +138,6 @@ def get_random_lyrics(df, year=None):
 
 	return song_name, song_year, selected_text
 ```
-
 
 Tenemos que indicarle a nuestro paquete las funciones que queremos disponibilizar. Esto lo hacemos en `__init__.py`
 
@@ -220,6 +217,13 @@ El comando `python -m build` genera tanto el archivo wheel como el source distri
 
 Finalmente, `python -m twine upload dist/*` sube todos los artefactos generados a PyPI, donde estarán disponibles para que cualquiera pueda instalarlos usando pip o uv. Durante este último paso, tendrás que autenticarte con tus credenciales de PyPI.
 
+### Conclusión
 
-### Nota:
+Ya no tenemos excusa para no hacer paquetes de python. Cualquier idea, por chica que sea, puede ser empaquetada. No tiene que ser muy útil ni resolver los problemas del mundo. Es mejor sólo hacerlo, rápido y barato, y echarla al mundo. 
+
+
+#### Nota:
 `uv` *cachea* las operaciones del *environment*, por lo que puede ser necesario borrar el ambiente y el caché de `uv` y crearlo de nuevo para visualizar los cambios hechos en el código de fuente. Para esto typear en el terminal `rm -rf ~/.cache/uv` y `rm -rf .venv`.
+
+
+
