@@ -1,5 +1,5 @@
 ---
-title: Crea una perfecta landing rápido
+title: Crea una perfecta landing en cero tiempo!
 date: 2025-01-20
 description: 
 tldr: Template de una landing usando TailwindCSS dentro de una app de fastHTML
@@ -16,6 +16,8 @@ Encontré un buenísimo punto de partida para aplicaciones web que necesiten una
 
 --- 
 **Nota**
-Si falla correr el ejecutable de `TailwindCSS`, correrlo así en el root de tu proyecto:
-> ./tailwindcss
+* Si falla correr el ejecutable de `TailwindCSS`, agrégale un `./` en el root de tu proyecto:
+  > ./tailwindcss
+* El script de python que convierte archivos de `html` a `fasthtml` está malo en la página del blog, sacarlo de los gists.
+
 
